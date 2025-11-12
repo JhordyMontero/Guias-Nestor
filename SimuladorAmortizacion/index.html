@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Tabla de Amortización</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Simulador de Tabla de Amortización</h2>
+
+<form id="formAmortizacion" action="procesar.php" method="post" onsubmit="return validarFormulario()">
+    <label>Monto de la Deuda:</label><br>
+    <input type="number" id="monto" name="monto" placeholder="Ej: 5000000" required><br>
+
+    <label>Tasa de Interés (% anual):</label><br>
+    <input type="number" id="tasa" name="tasa" step="0.01" placeholder="Ej: 12.5" required><br>
+
+    <label>Plazo (meses):</label><br>
+    <input type="number" id="plazo" name="plazo" placeholder="Ej: 12" required><br><br>
+
+    <button type="submit">Calcular</button>
+</form>
+
+<script>
+function validarFormulario() {
+    let monto = document.getElementById("monto").value;
+    let tasa = document.getElementById("tasa").value;
+    let plazo = document.getElementById("plazo").value;
+
+    if (monto <= 0) {
+        alert("Por favor, ingresa un monto mayor a 0.");
+        return false;
+    }
+
+    if (tasa <= 0 || tasa > 100) {
+        alert("Por favor, ingresa una tasa de interés válida (entre 0 y 100).");
+        return false;
+    }
+
+    if (plazo <= 0 || plazo > 600) {
+        alert("Por favor, ingresa un plazo válido (entre 1 y 600 meses).");
+        return false;
+    }
+
+    return true; // Todo está correcto, se envía el formulario
+}
+</script>
+
+</body>
+</html>
+
