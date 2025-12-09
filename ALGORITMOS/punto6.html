@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let matriz = [];
+    let aprobados = 0;
+    let recuperacion = 0;
+    let maximos = 0;
+
+    for (let i = 0; i < 50; i++) {
+
+        let codigo = prompt("Código del estudiante " + (i + 1));
+        let n1, n2, n3;
+
+        do {
+            n1 = parseFloat(prompt("Nota 1 (1.0 a 5.0):"));
+        } while (n1 < 1 || n1 > 5);
+
+        do {
+            n2 = parseFloat(prompt("Nota 2 (1.0 a 5.0):"));
+        } while (n2 < 1 || n2 > 5);
+
+        do {
+            n3 = parseFloat(prompt("Nota 3 (1.0 a 5.0):"));
+        } while (n3 < 1 || n3 > 5);
+
+        let notaFinal = (n1 + n2 + n3) / 3;
+
+        matriz.push([codigo, n1, n2, n3, notaFinal]);
+
+        if (notaFinal >= 3.0) aprobados++;
+
+        if (notaFinal >= 2.0 && notaFinal < 3.0) recuperacion++;
+
+        if (notaFinal === 5.0) maximos++;
+    }
+
+    console.log("Aprobados:", aprobados);
+    console.log("Con derecho a recuperación:", recuperacion);
+    console.log("Con nota 5.0:", maximos);
+</script>
+
+</body>
+</html>

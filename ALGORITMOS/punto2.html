@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descuento</title>
+</head>
+<body>
+    <script>
+        let articulo = prompt("Ingrese el artículo que desea comprar");
+        let clave = prompt("Ingrese clave del artículo (01 o 02)"); 
+        let precioOriginal = Number(prompt("Ingrese el precio del artículo"));
+        let descuento = 0;
+
+        if (clave == "01") {
+            descuento = 0.10;
+        }
+        else if (clave == "02") {
+            descuento = 0.20;
+        }
+        else {
+            alert("Clave incorrecta");
+        }
+
+        let precioFinal = precioOriginal - (precioOriginal * descuento);
+
+        console.log("Artículo: " + articulo);
+        console.log("Clave: " + clave);
+        console.log("Precio original: " + precioOriginal);
+        console.log("Precio con descuento: " + precioFinal);
+
+        alert(
+            "Artículo: " + articulo + "\n" +
+            "Clave: " + clave + "\n" +
+            "Descuento aplicado: " + (descuento * 100) + "%\n" +
+            "Precio original: " + precioOriginal + "\n" +
+            "Precio final: " + precioFinal + " pesos"
+        );
+    </script>
+</body>
+</html>
