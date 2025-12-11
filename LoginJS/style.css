@@ -1,0 +1,44 @@
+body {
+    background-color: #1e1e2f; 
+    color: white;
+    text-align: center;
+}
+
+.caja {
+    background-color: #3a3a48; 
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    margin-top: 80px;
+    border-radius: 10px;
+}
+
+input {
+    width: 80%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+#login {
+    background-color: #003b80; 
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 80%;
+    border-radius: 5px;
+}
+
+#login:hover {
+    background-color: #0055aa;
+}
+
+#mostrar {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+a {
+    color: #8ab4ff;
+}

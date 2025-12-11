@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login sencillo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="caja">
+    <h2>Bienvenido de Nuevo</h2>
+    <p>Inicia sesión para continuar</p>
+
+    <label>Usuario o Email</label><br>
+    <input type="text" id="usuario" placeholder="ejemplo@correo.com"><br><br>
+
+    <label>Contraseña</label><br>
+    <input type="password" id="pass">
+    <button id="mostrar">mostrar</button><br><br>
+
+    <a href="#" class="olvido">Olvidaste tu contraseña?</a><br><br>
+
+    <button id="login">Iniciar Sesion</button>
+
+    <p>¿No tienes una cuenta? <a href="#">Registrate ahora</a></p>
+
+    <!-- Aquí aparecerá el mensaje -->
+    <p id="mensaje" style="color: lightgreen; font-weight: bold;"></p>
+</div>
+
+<script src="validation.js"></script>
+</body>
+</html>
