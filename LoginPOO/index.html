@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login corregido a POO</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="form-title">Iniciar Sesión</h2>
+
+        
+        <div id="login-form">
+            <input type="email" id="login-email" placeholder="Correo" />
+            <input type="password" id="login-password" placeholder="Contraseña" />
+            <button onclick="app.login()">Entrar</button>
+
+            <div class="links">
+                <a href="#" onclick="ui.showForgot()">¿Olvidaste tu contraseña?</a>
+                <a href="#" onclick="ui.showRegister()">Crear cuenta nueva</a>
+            </div>
+        </div>
+
+        
+        <div id="register-form" class="hidden">
+            <input type="text" id="reg-name" placeholder="Nombre" />
+            <input type="email" id="reg-email" placeholder="Correo" />
+            <input type="password" id="reg-password" placeholder="Contraseña" />
+            <button onclick="app.register()">Registrarse</button>
+
+            <div class="links">
+                <a href="#" onclick="ui.showLogin()">Volver al login</a>
+            </div>
+        </div>
+
+        
+        <div id="forgot-form" class="hidden">
+            <input type="email" id="forgot-email" placeholder="Ingresa tu correo" />
+            <button onclick="app.recover()">Enviar enlace de recuperación</button>
+
+            <div class="links">
+                <a href="#" onclick="ui.showLogin()">Volver al login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
